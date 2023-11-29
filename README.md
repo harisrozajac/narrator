@@ -30,10 +30,6 @@ Or use `.env` file and set the variables there.
 Make sure to install `python-dotenv` if you want to use this method.
 You'll also have to run load_dotenv() in files where you want to use the environment variables.
 
-```
-
-```
-
 Make a new voice in Eleven and get the voice id of that voice using their [get voices](https://elevenlabs.io/docs/api-reference/voices) API, or by clicking the flask icon next to the voice in the VoiceLab tab.
 
 ```
