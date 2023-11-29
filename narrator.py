@@ -6,8 +6,11 @@ import time
 import simpleaudio as sa
 import errno
 from elevenlabs import generate, play, set_api_key, voices
+from dotenv import load_dotenv
 
-client = OpenAI()
+load_dotenv()
+
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 set_api_key(os.environ.get("ELEVENLABS_API_KEY"))
 
@@ -52,7 +55,10 @@ def generate_new_line(base64_image):
         },
     ]
 
-
+# TODO: create a key value map of voice ids and prompts
+# example: 
+# {"voice_id": "id_1", 
+# "prompt": "you are a fortune teller that tells fortune based on the image"}
 def analyze_image(base64_image, script):
     response = client.chat.completions.create(
         model="gpt-4-vision-preview",

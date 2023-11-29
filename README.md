@@ -1,9 +1,6 @@
-# David Attenborough narrates your life. 
+# David Attenborough narrates your life.
 
 https://twitter.com/charliebholtz/status/1724815159590293764
-
-## Want to make your own AI app?
-Check out [Replicate](https://replicate.com). We make it easy to run machine learning models with an API.
 
 ## Setup
 
@@ -18,11 +15,23 @@ source venv/bin/activate
 Then, install the dependencies:
 `pip install -r requirements.txt`
 
-Make a [Replicate](https://replicate.com), [OpenAI](https://beta.openai.com/), and [ElevenLabs](https://elevenlabs.io) account and set your tokens:
+You will need ffmpeg to play audio. On Mac, you can install it with `brew install ffmpeg`.
+
+Make a [OpenAI](https://beta.openai.com/), and [ElevenLabs](https://elevenlabs.io) account and set your tokens:
+
+**Open AI API Note**: If you haven't added at least $1 of credit to your OpenAI account, you will not have access to `gpt-4-vision-preview`.
 
 ```
 export OPENAI_API_KEY=<token>
 export ELEVENLABS_API_KEY=<eleven-token>
+```
+
+Or use `.env` file and set the variables there.
+Make sure to install `python-dotenv` if you want to use this method.
+You'll also have to run load_dotenv() in files where you want to use the environment variables.
+
+```
+
 ```
 
 Make a new voice in Eleven and get the voice id of that voice using their [get voices](https://elevenlabs.io/docs/api-reference/voices) API, or by clicking the flask icon next to the voice in the VoiceLab tab.
@@ -34,12 +43,13 @@ export ELEVENLABS_VOICE_ID=<voice-id>
 ## Run it!
 
 In on terminal, run the webcam capture:
+
 ```bash
 python capture.py
 ```
+
 In another terminal, run the narrator:
 
 ```bash
 python narrator.py
 ```
-
