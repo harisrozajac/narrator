@@ -38,7 +38,7 @@ export ELEVENLABS_VOICE_ID=<voice-id>
 
 ## Run it!
 
-In on terminal, run the webcam capture:
+In a terminal, run the webcam capture:
 
 ```bash
 python capture.py
